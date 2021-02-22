@@ -1,38 +1,609 @@
-.App {
-  text-align: center;
+/* .mainNavBar {
+  border: 1px solid black;
+  height: 80px;
+} */
+.allPublic {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.maxPublicLight {
+  transition: 0.5s;
+  background-color: #fff0c1;
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 10px 10px 10px 10px; */
+}
+.maxPublicDark {
+  transition: 0.5s;
+  background-color: rgb(73, 73, 73);
+  /* border: 1px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 10px 10px 10px 10px; */
+}
+.navbarTitleLight {
+  transition: 0.5s;
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+}
+.navbarTitleDark {
+  transition: 0.5s;
+  color: #fff;
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+}
+.logoFix {
+  cursor: pointer;
+  background-color: gold;
+  width: 200px;
+}
+/* ::placeholder {
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+} */
+.fontChange {
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+}
+.digiClockLight {
+  transition: 0.5s;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 260px;
+  font-family: georgia;
+  /* font-weight: 200; */
+  font-variant-numeric: oldstyle-nums;
+}
+.digiClockDark {
+  transition: 0.5s;
+  background-color: rgb(90, 90, 90);
+  color: #fff;
+  border-radius: 5px;
+  width: 260px;
+  font-family: georgia;
+  /* font-weight: 200; */
+  font-variant-numeric: oldstyle-nums;
+}
+.navbarBigLight {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  transition: 0.5s;
+  width: 100%;
+  height: 100px;
+  background-color: #fef8e5;
+}
+.navbarBigDark {
+  padding-top: 0px !important;
+  padding-left: 0px !important;
+  padding-bottom: 0 !important;
+  transition: 0.5s;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(59, 59, 59);
+}
+.navbarFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.hyperlinkNavbarLight {
+  color: rgb(100, 100, 100);
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  text-decoration: none !important;
+}
+.hyperlinkNavbarDivLight :hover {
+  color: grey !important;
+}
+.hyperlinkNavbarDark {
+  color: rgb(189, 189, 189);
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  text-decoration: none !important;
+}
+.hyperlinkNavbarDivDark :hover {
+  color: rgb(209, 209, 209) !important;
+}
+.hyperlinkNavbarTitle {
+  color: rgb(56, 56, 56);
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  text-decoration: none !important;
+}
+.hyperlinkNavbarTitle:hover {
+  color: rgb(56, 56, 56);
+}
+.logoutNavbar {
+  color: rgb(100, 100, 100);
+  margin: 0 !important;
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+}
+.logoutNavbarDiv :hover {
+  cursor: pointer;
+  color: grey !important;
+}
+.logoutNavbarDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+/* .hamburgetMenu {
+  color: rgb(206, 206, 206);
+}
+.hamburgerSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+.hamburgerSize :hover {
+  cursor: pointer;
+  color: rgb(139, 139, 139);
+} */
+.links {
+  flex-grow: 0 !important;
+}
+.regisLoginDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 230px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* global chat */
+.onOffUsers {
+  /* border: 1px solid black; */
+  width: 180px !important;
+  height: 208px !important;
+  overflow-y: scroll;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.onOffUserId {
+  font-family: "Assistant", sans-serif;
+  /* font-weight: 350; */
 }
+.conversationBoxLight {
+  transition: 0.5s;
+  background-color: white;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  width: 210px;
+  height: 270px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.conversationBoxDark {
+  transition: 0.5s;
+  background-color: rgb(112, 112, 112);
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  width: 210px;
+  height: 270px;
+
+  display: flex;
+  flex-direction: column;
+}
+.conversationBoxSmallOneLight {
+  transition: 0.5s;
+  /* border: 1px solid black; */
+  height: 60px;
+  border-radius: 5px 5px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.conversationBoxSmallOneDark {
+  transition: 0.5s;
+  /* border: 1px solid black; */
+  height: 60px;
+  background-color: #8f8f8f;
+  border-radius: 5px 5px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.userIsOnlineLight {
+  transition: 0.5s;
+  color: rgb(69, 190, 90);
+}
+.userIsOnlineDark {
+  transition: 0.5s;
+  color: lightgray;
+}
+/* .userIsOfflineLight {
+}
+.userIsOfflineDark {
+} */
+.globalBoxLight {
+  transition: 0.5s;
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 220px;
+}
+.globalBoxDark {
+  transition: 0.5s;
+  /* outline: none !important;
+  border: none !important;
+  border-color: none !important; */
+  background-color: rgb(112, 112, 112);
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  height: 220px;
+}
+.chatBox {
+  /* background-color: white; */
+  /* border: 1px solid black; */
+  padding-right: 0px !important;
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+}
+.globalBig {
+  /* border: 1px solid black; */
+  width: 100%;
+  min-width: 920px;
+  /* max-width: 1000px; */
+  height: 270px;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.usersOnline {
+  color: rgb(54, 54, 54);
+}
+
+/* video iframe */
+.videoBigLight {
+  transition: 0.5s;
+  background-color: white;
+  transition: 0.5s;
+  border-radius: 5px;
+  width: 570px;
+  min-width: 570px;
+  height: 350px;
+  /* border: 1px solid black; */
+}
+.videoBigDark {
+  background-color: rgb(112, 112, 112);
+  transition: 0.5s;
+  border-radius: 5px;
+  width: 570px;
+  min-width: 570px;
+  height: 350px;
+  /* border: 1px solid black; */
+}
+.inputSizeLight {
+  transition: 0.5s;
+  width: 250px;
+}
+.inputSizeDark {
+  transition: 0.5s;
+  background-color: rgb(143, 143, 143);
   color: white;
+  border: none;
+  outline: none;
+  width: 250px;
+}
+.inputSizeDark::placeholder {
+  color: rgb(216, 216, 216);
+}
+.youtubeTwoButtonsLight {
+  outline: none !important;
+  transition: all 0.5s;
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.youtubeTwoButtonsLight:hover {
+  background-color: rgb(204, 204, 204);
+}
+.youtubeTwoButtonsLight:disabled:hover {
+  background-color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.youtubeTwoButtonsDark {
+  outline: none !important;
+  transition: all 0.5s;
+  background-color: rgb(209, 209, 209);
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.youtubeTwoButtonsDark:hover {
+  background-color: rgb(180, 180, 180);
+}
+.youtubeTwoButtonsDark:disabled {
+  opacity: 0.5;
+}
+.youtubeTwoButtonsDark:disabled:hover {
+  background-color: rgb(209, 209, 209);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* memo */
+.memoBig {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 100%;
+  min-width: 350px;
+  min-height: 350px;
+  margin-right: 15px;
+  /* max-width: 600px;
+  max-height: 350px; */
+}
+.memoBoxLight {
+  transition: 0.5s;
+  background-color: white;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 350px;
+  resize: none;
+}
+.memoBoxDark {
+  transition: 0.5s;
+  background-color: rgb(112, 112, 112);
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  height: 350px;
+  resize: none;
+}
+/* .memoBoxLight::placeholder{
+
+} */
+.memoBoxDark::placeholder {
+  color: rgb(216, 216, 216);
+}
+
+/* todo list */
+.todoBig {
+  width: 230px;
+  height: 270px;
+}
+.todoListSizeLight {
+  transition: 0.5s;
+  background-color: white;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  width: 220px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+}
+.todoListSizeDark {
+  transition: 0.5s;
+  background-color: rgb(112, 112, 112);
+  color: white;
+  border-radius: 5px;
+  /* border: 1px solid black; */
+  width: 220px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+}
+.todoInputLight {
+  transition: 0.5s;
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  border: none;
+  outline: none;
+}
+.todoInputDark {
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  background-color: rgb(143, 143, 143);
+  color: white;
+  border: none;
+  outline: none;
+}
+.todoInputDark::placeholder {
+  transition: 0.5s;
+  color: rgb(216, 216, 216);
+}
+.todoAddButtonLight {
+  outline: none !important;
+  transition: all 0.5s;
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.todoAddButtonLight:hover {
+  background-color: rgb(204, 204, 204);
+}
+.todoAddButtonDark {
+  outline: none !important;
+  transition: all 0.5s;
+  background-color: rgb(209, 209, 209);
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.todoAddButtonDark:hover {
+  background-color: rgb(180, 180, 180);
+}
+.todoDeleteLight {
+  outline: none !important;
+  transition: all 0.5s;
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.todoDeleteLight:hover {
+  background-color: rgb(204, 204, 204);
+}
+.todoDeleteDark {
+  outline: none !important;
+  transition: all 0.5s;
+  background-color: rgb(209, 209, 209);
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+.todoDeleteDark:hover {
+  background-color: rgb(180, 180, 180);
+}
+
+/* max */
+.maxTopHalf {
+  /* border: 1px solid black; */
+  display: flex;
+  min-width: 920px;
+  height: 350px;
+}
+.maxGlobal {
+  /* border: 1px solid yellowgreen; */
+  height: 100%;
+  min-width: 920px;
+  min-height: 290px;
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
+.maxHomepage {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+}
+
+/* message */
+.messageOnlineLight {
+  transition: 0.5s;
+  color: rgb(71, 142, 223);
+}
+.messageOnlineDark {
+  transition: 0.5s;
+  color: rgb(113, 159, 211);
+}
+.messageOfflineLight {
+  transition: 0.5s;
+  color: rgb(119, 219, 119);
+}
+.messageOfflineDark {
+  transition: 0.5s;
+  color: rgb(158, 202, 101);
+}
+/* .messageMomentLight {
+} */
+.messageMomentDark {
+  transition: 0.5s;
+  color: rgb(202, 202, 202);
+}
+
+/* etc */
+.modeLight {
+  transition: 0.5s;
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 0;
+}
+.modeLight:hover {
+  background-color: gold;
+}
+.modeDark {
+  transition: 0.5s;
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 0;
+}
+.modeDark:hover {
+  background-color: gold;
+}
+/* button {
+  transition: all 0.3s;
+  border-radius: 8px !important;
+  border: 2px solid rgb(216, 216, 216);
+  font-family: "Assistant", sans-serif;
+  font-weight: 350;
+}
+button:hover {
+  background-color: rgb(196, 196, 196); */
+/* transition-delay: 1s; */
+/* transition: 0.7s; */
+/* transition- */
+/* color: rgb(54, 54, 54); */
+/* } */
+form input {
+  background-color: white;
+  border-color: rgb(223, 223, 223);
+  border-radius: 5px;
+}
+/* .buttonHover:hover {
+  background-color: rgb(54, 54, 54);
+  color: rgb(54, 54, 54);
+} */
+
+/* login page */
+.hyperlinkSignup {
+  color: rgb(100, 100, 100);
+  font-family: "Assistant", sans-serif;
+  font-weight: 200;
+  text-decoration: none !important;
+  /* transition: all 1s; */
+}
+.hyperlinkSignup:hover {
+  color: black;
+  font-weight: 400;
+}
+
+/* sign up page */
+.signUpSize {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  width: 400px;
+  height: 100%;
+}
+
+/* tester html */
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.light {
+  color: yellow;
+}
+.dark {
+  color: blueviolet;
 }
