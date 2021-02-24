@@ -12,18 +12,18 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.loading);
 
-  const themifyButton = () => {
-    if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+  // const themifyButton = () => {
+  //   if (theme === "light") {
+  //     setTheme("dark");
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // };
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -100,8 +100,8 @@ const LoginPage = () => {
       </Form>
       {/* </Col>
       </Row> */}
-      <div className={theme}>some random words</div>
-      <button onClick={themifyButton}>themify</button>
+      {/* <div className={theme}>some random words</div>
+      <button onClick={themifyButton}>themify</button> */}
     </div>
   );
 };

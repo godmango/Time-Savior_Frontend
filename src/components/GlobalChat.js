@@ -19,6 +19,7 @@ const GlobalChat = () => {
 
   const currentTheme = useSelector((state) => state.auth.theme);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  // const allUsers =  useSelector((state) => state.user)
 
   const loading = useSelector((state) => state.user.loading);
 
@@ -44,6 +45,8 @@ const GlobalChat = () => {
   }, [accessToken]);
 
   useEffect(() => {
+    // let testingSomething = currentUser._id
+    // let totalCurrentUsers =
     if (isAuthenticated === false) {
       setOnlineUsers([]);
     }

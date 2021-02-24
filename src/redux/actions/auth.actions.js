@@ -81,7 +81,11 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
     dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data });
     toast.success(`Welcome back ${name}`);
   } catch (error) {
-    if (error.errors.message === "Token expired")
+    console.log("the error boys", error);
+    if (
+      error.errors.message === "Token expired" ||
+      error.errors.message === "Token is invalid"
+    )
       localStorage.setItem("accessToken", "");
     dispatch({ type: types.GET_CURRENT_USER_FAILURE, payload: error });
   }
