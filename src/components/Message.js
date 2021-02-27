@@ -13,9 +13,9 @@ const Message = ({ msg }) => {
         <div>
           <span
             className={
-              currentUser === null
-                ? `messageOffline${currentTheme}`
-                : `messageOnline${currentTheme}`
+              currentUser && currentUser.name === msg.name
+                ? `messageOnline${currentTheme}`
+                : `messageOffline${currentTheme}`
             }
           >
             <strong>@{msg.name}</strong>

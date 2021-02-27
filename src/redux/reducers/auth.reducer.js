@@ -22,6 +22,7 @@ const authReducer = (state = initialState, action) => {
       };
     case types.LOGIN_FAILURE:
       return { ...state, loading: false, isAuthenticated: false };
+
     // get current user
     case types.GET_CURRENT_USER_REQUEST:
       return { ...state, loading: true };
@@ -44,6 +45,7 @@ const authReducer = (state = initialState, action) => {
       return { ...state, loading: false };
     case types.REGISTER_FAILURE:
       return { ...state, loading: false };
+
     // update iframe (youtube video)
     case types.IFRAME_UPDATE_REQUEST:
       return { ...state, loading: true };
@@ -57,6 +59,7 @@ const authReducer = (state = initialState, action) => {
       };
     case types.IFRAME_UPDATE_FAILURE:
       return { ...state, loading: false };
+
     // update todo list
     case types.TODO_UPDATE_REQUEST:
       return { ...state, loading: true };
@@ -84,6 +87,7 @@ const authReducer = (state = initialState, action) => {
       };
     case types.MEMO_UPDATE_FAILURE:
       return { ...state, loading: false };
+
     // logout
     case types.LOGOUT_REQUEST:
       return { ...state, loading: true };

@@ -8,13 +8,18 @@ const Memo = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const currentUser = useSelector((state) => state.auth);
   const [memoWords, setMemoWords] = useState("");
+  const [displayMemoWords, setDisplayMemoWords] = useState("");
   const handleInput = (e) => {
     setMemoWords(e.target.value);
+
+    setDisplayMemoWords(e.target.value);
   };
+
   useEffect(() => {
     if (currentUser.user !== null && isAuthenticated) {
-      document.getElementById("memoBox").value =
-        currentUser.user.settings.memoList;
+      setDisplayMemoWords(currentUser.user.settings.memoList);
+    } else if (currentUser.user === null && !isAuthenticated) {
+      setDisplayMemoWords("");
     }
   }, [isAuthenticated]);
 
@@ -31,6 +36,7 @@ const Memo = () => {
       <textarea
         className={`memoBox${currentTheme}`}
         id="memoBox"
+        value={displayMemoWords}
         placeholder="Memo to self..."
         onInput={handleInput}
       ></textarea>

@@ -150,7 +150,8 @@
   transition: 0.5s;
   background-color: white;
   border-radius: 5px;
-  width: 210px;
+  min-width: 210px;
+  width: 16%;
   height: 270px;
 
   display: flex;
@@ -212,6 +213,8 @@
   padding-right: 0px !important;
   display: flex;
   flex-direction: column;
+  min-width: 465px;
+  width: 50%;
   height: 270px;
 }
 .globalBig {
@@ -327,14 +330,18 @@
 
 /* todo list */
 .todoBig {
-  width: 230px;
+  min-width: 230px;
+  width: 18%;
   height: 270px;
+}
+.todoFormSize {
+  width: 90%;
 }
 .todoListSizeLight {
   transition: 0.5s;
   background-color: white;
   border-radius: 5px;
-  width: 220px;
+  width: 90%;
   height: 240px;
   display: flex;
   align-items: center;
@@ -356,6 +363,7 @@
   overflow-y: scroll;
 }
 .todoInputLight {
+  /* width: 100%; */
   transition: 0.5s;
   font-family: "Assistant", sans-serif;
   font-weight: 200;

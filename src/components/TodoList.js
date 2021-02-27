@@ -73,7 +73,7 @@ const TodoList = () => {
 
   return (
     <div className="todoBig">
-      <form onSubmit={handleSubmit}>
+      <form className="todoFormSize" onSubmit={handleSubmit}>
         <input
           className={`todoInput${currentTheme}`}
           type="text"

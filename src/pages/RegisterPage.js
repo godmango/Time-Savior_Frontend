@@ -45,8 +45,6 @@ const RegisterPage = () => {
   }, [dispatch, history, redirectTo]);
   return (
     <div className="signUpSize">
-      {/* <Row>
-        <Col md={{ span: 6, offset: 3 }}> */}
       <div className="text-center">
         <h1 className="fontChange">Sign Up</h1>
         <p className="fontChange">Create Your Account</p>

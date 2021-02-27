@@ -23,9 +23,6 @@ const PublicNavbar = () => {
 
   const authLinks = (
     <div className="logoutNavbarDiv">
-      {/* <div.Link as={Link} to="/admin/profile">
-        <FontAwesomeIcon icon="chart-line" size="sm" /> Admin
-      </div.Link> */}
       <p className="logoutNavbar" onClick={handleLogout}>
         <FontAwesomeIcon icon="sign-out-alt" size="sm" /> Logout
       </p>
@@ -56,9 +53,6 @@ const PublicNavbar = () => {
     <Navbar className={`navbarBig${currentTheme}`} expand="lg">
       <div className="navbarFlex">
         <a href="/">
-          {/* <div className={`navbarTitle${currentTheme}`} width="200px">
-            TIME-SAVIOR
-          </div> */}
           <img className="logoFix" src={logo} alt="" />
         </a>
 

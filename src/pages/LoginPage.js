@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Redirect, Link } from "react-router-dom";
+import { Form } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import authActions from "../redux/actions/auth.actions";
 const LoginPage = () => {
@@ -12,18 +12,9 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
-  // const [theme, setTheme] = useState("light");
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.loading);
-
-  // const themifyButton = () => {
-  //   if (theme === "light") {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // };
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -98,10 +89,6 @@ const LoginPage = () => {
           </a>
         </p>
       </Form>
-      {/* </Col>
-      </Row> */}
-      {/* <div className={theme}>some random words</div>
-      <button onClick={themifyButton}>themify</button> */}
     </div>
   );
 };
