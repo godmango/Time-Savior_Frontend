@@ -5,9 +5,10 @@ import Memo from "../components/Memo";
 import GlobalChat from "../components/GlobalChat";
 
 const HomePage = () => {
+  console.log("render hp");
   return (
     <div className="maxHomepage">
-      <DigitalClock />
+      {/* <DigitalClock /> */}
       <div className="maxTopHalf">
         <Memo />
         <YouTubeVideoLoader />

@@ -78,10 +78,11 @@ const TodoList = () => {
           className={`todoInput${currentTheme}`}
           type="text"
           placeholder="What to do?"
+          maxLength="30"
           onInput={handleInput}
         />
         <button
-          className={`todoAddButton${currentTheme}`}
+          className={`buttonStyle${currentTheme}`}
           type="submit"
           onClick={handleClick}
         >
@@ -92,25 +93,25 @@ const TodoList = () => {
       <div className={`todoListSize${currentTheme}`}>
         {currentUser !== null ? (
           currentUser.settings.todoList.map((todos, index) => (
-            <div key={index}>
+            <div className="eachTodoSize" key={index}>
               <Checkbox> {todos}</Checkbox>
               <button
                 className={`todoDelete${currentTheme}`}
                 onClick={() => handleDelButton(index)}
               >
-                delete
+                del
               </button>
             </div>
           ))
         ) : fullList && fullList !== [] ? (
           fullList.map((todos, index) => (
-            <div key={index}>
+            <div className="eachTodoSize" key={index}>
               <Checkbox> {todos}</Checkbox>
               <button
                 className={`todoDelete${currentTheme}`}
                 onClick={() => handleDelButton(index)}
               >
-                delete
+                X
               </button>
             </div>
           ))

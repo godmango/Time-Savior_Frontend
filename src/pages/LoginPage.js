@@ -15,6 +15,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const loading = useSelector((state) => state.auth.loading);
+  const currentTheme = useSelector((state) => state.auth.theme);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -65,7 +66,7 @@ const LoginPage = () => {
         </Form.Group>
         {loading ? (
           <button
-            className="btn-block"
+            className={`btn-block buttonStyle${currentTheme}`}
             variant="primary"
             type="button"
             disabled
@@ -78,7 +79,11 @@ const LoginPage = () => {
             Loading...
           </button>
         ) : (
-          <button className="btn-block" type="submit" variant="primary">
+          <button
+            className={`btn-block buttonStyle${currentTheme}`}
+            type="submit"
+            variant="primary"
+          >
             Login
           </button>
         )}

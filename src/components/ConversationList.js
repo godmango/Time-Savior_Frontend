@@ -13,9 +13,9 @@ const ConversationList = ({ onlineUsers }) => {
   useEffect(() => {
     dispatch(userActions.usersRequest());
   }, []);
-  console.log("off or on", onlineUsers);
+  // console.log("off or on", onlineUsers);
   return (
-    <Container className="onOffUsers">
+    <Container className={`onOffUsers${currentTheme}`}>
       {users.map((user) => (
         <div key={user._id}>
           <span className="onOffUserId">{user.name}</span>

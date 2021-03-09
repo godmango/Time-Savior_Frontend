@@ -93,6 +93,7 @@ const GlobalChat = () => {
       });
     }
   }, []);
+  console.log("stb rendering");
 
   return (
     <div className="globalBig">
@@ -124,7 +125,7 @@ const GlobalChat = () => {
         <div>
           <Form onSubmit={handleSendMessage}>
             <Form.Row>
-              <Col>
+              <Col className="formStyle">
                 {isAuthenticated ? (
                   <Form.Control
                     type="text"
@@ -145,13 +146,26 @@ const GlobalChat = () => {
                   />
                 )}
               </Col>
-              <button
-                className="buttonHover"
-                type="submit"
-                disabled={loading || !newMessage || isAuthenticated === false}
-              >
-                Send
-              </button>
+              {isAuthenticated === true ? (
+                loading || !newMessage ? (
+                  <button
+                    className={`disabledButtonStyle${currentTheme}`}
+                    type="submit"
+                    disabled="true"
+                  >
+                    Send
+                  </button>
+                ) : (
+                  <button
+                    className={`sendButtonStyle${currentTheme}`}
+                    type="submit"
+                  >
+                    Send
+                  </button>
+                )
+              ) : (
+                <></>
+              )}
             </Form.Row>
           </Form>
         </div>

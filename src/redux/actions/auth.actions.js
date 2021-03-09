@@ -76,6 +76,7 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
   }
   try {
     const res = await api.get("/users/me");
+    console.log("response dataaa", res.data);
 
     const name = res.data.data.user.name;
     dispatch({ type: types.GET_CURRENT_USER_SUCCESS, payload: res.data.data });
@@ -83,8 +84,8 @@ const getCurrentUser = (accessToken) => async (dispatch) => {
   } catch (error) {
     console.log("the error boys", error);
     if (
-      error.errors.message === "Token expired" ||
-      error.errors.message === "Token is invalid"
+      error.errors.message === "Token expired please log in again" ||
+      error.errors.message === "Token is invalid please log in again"
     )
       localStorage.setItem("accessToken", "");
     dispatch({ type: types.GET_CURRENT_USER_FAILURE, payload: error });

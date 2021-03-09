@@ -18,6 +18,7 @@ const RegisterPage = () => {
     password2: "",
   });
   const loading = useSelector((state) => state.auth.loading);
+  const currentTheme = useSelector((state) => state.auth.theme);
   const dispatch = useDispatch();
   const redirectTo = useSelector((state) => state.route.redirectTo);
   const history = useHistory();
@@ -97,7 +98,7 @@ const RegisterPage = () => {
         </Form.Group>
         {loading ? (
           <button
-            className="btn-block"
+            className={`btn-block buttonStyle${currentTheme}`}
             variant="primary"
             type="button"
             disabled
@@ -110,7 +111,11 @@ const RegisterPage = () => {
             Loading...
           </button>
         ) : (
-          <button className="btn-block" type="submit" variant="primary">
+          <button
+            className={`btn-block buttonStyle${currentTheme}`}
+            type="submit"
+            variant="primary"
+          >
             Register
           </button>
         )}

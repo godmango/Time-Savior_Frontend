@@ -9,12 +9,30 @@ const YouTubeVideoLoader = () => {
   const currentUser = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
   const [rawIframeCode, setRawIframeCode] = useState("");
+  const [inputError, setInputError] = useState(null);
   const [displayIframeCode, setDisplayIframeCode] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState("");
 
   const handleInput = (e) => {
-    setRawIframeCode(e.target.value);
+    let keyCode;
+    if (
+      e.target.value.substr(0, 32) === "https://www.youtube.com/watch?v=" ||
+      e.target.value.substr(0, 20) === "youtube.com/watch?v="
+    ) {
+      keyCode = e.target.value.slice(e.target.value.lastIndexOf("=") + 1);
+      setInputError(false);
+    } else if (e.target.value.substr(0, 17) === "https://youtu.be/") {
+      keyCode = e.target.value.slice(e.target.value.lastIndexOf("/") + 1);
+      setInputError(false);
+    } else {
+      setInputError(true);
+    }
+    console.log(keyCode);
+    // setRawIframeCode(e.target.value);
+    setRawIframeCode(
+      `<iframe width="560" height="315" src="https://www.youtube.com/embed/${keyCode}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+    );
   };
   const handleReset = (e) => {
     setRawIframeCode("");
@@ -25,12 +43,18 @@ const YouTubeVideoLoader = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      rawIframeCode.substr(0, 32) !== '<iframe width="560" height="315"' &&
-      rawIframeCode.substr(e.target[0].value.length - 9) !== "</iframe>"
-    ) {
-      setErrors("Please type in <iframe></iframe> form");
+    // if (
+    //   rawIframeCode.substr(0, 32) !== '<iframe width="560" height="315"' &&
+    //   rawIframeCode.substr(e.target[0].value.length - 9) !== "</iframe>"
+    // ) {
+    //   setErrors("Please type in <iframe></iframe> form");
+    //   setRawIframeCode("");
+    //   return;
+    // }
+    if (inputError === true) {
+      setErrors("Please type URL correctly");
       setRawIframeCode("");
+      setInputError(null);
       return;
     }
     setErrors("");
@@ -54,57 +78,57 @@ const YouTubeVideoLoader = () => {
   };
 
   return (
-    <div className={`videoBig${currentTheme}`}>
+    <div>
       <form onSubmit={handleSubmit} onReset={handleReset}>
         {(!currentUser && submitted === false) ||
         (currentUser &&
           !currentUser.settings.iframeString &&
           submitted === false) ? (
-          <div>
+          <div className="videoInputBox">
             <input
               className={`inputSize${currentTheme}`}
               type="text"
               disabled={false}
-              placeholder="paste your youtube iframe code"
+              placeholder="Paste YouTube URL..."
               onInput={handleInput}
             />
             <button
-              className={`youtubeTwoButtons${currentTheme}`}
+              className={`buttonStyle${currentTheme}`}
               disabled={false}
               type="submit"
               name="submit"
             >
               submit
             </button>
-            <button
-              className={`youtubeTwoButtons${currentTheme}`}
+            {/* <button
+              className={`buttonStyle${currentTheme}`}
               disabled={true}
               type="reset"
               onClick={clearButton}
               name="clear"
             >
               clear
-            </button>
+            </button> */}
           </div>
         ) : (
           <div>
-            <input
+            {/* <input
               className={`inputSize${currentTheme}`}
               type="text"
               disabled={true}
-              placeholder="paste your youtube iframe code"
+              placeholder="Paste YouTube URL..."
               onInput={handleInput}
             />
             <button
-              className={`youtubeTwoButtons${currentTheme}`}
+              className={`buttonStyle${currentTheme}`}
               disabled={true}
               type="submit"
               name="submit"
             >
               submit
-            </button>
+            </button> */}
             <button
-              className={`youtubeTwoButtons${currentTheme}`}
+              className={`buttonStyle${currentTheme}`}
               disabled={false}
               type="reset"
               onClick={clearButton}
@@ -117,17 +141,19 @@ const YouTubeVideoLoader = () => {
 
         {errors && <small className="form-text text-danger">{errors}</small>}
       </form>
-      {currentUser !== null && displayIframeCode === true ? (
-        <div
-          dangerouslySetInnerHTML={{
-            __html: currentAuth.user.settings.iframeString,
-          }}
-        ></div>
-      ) : displayIframeCode === true && submitted === true ? (
-        <div dangerouslySetInnerHTML={{ __html: rawIframeCode }}></div>
-      ) : (
-        <div></div>
-      )}
+      <div className={`videoBig${currentTheme}`}>
+        {currentUser !== null && displayIframeCode === true ? (
+          <div
+            dangerouslySetInnerHTML={{
+              __html: currentAuth.user.settings.iframeString,
+            }}
+          ></div>
+        ) : displayIframeCode === true && submitted === true ? (
+          <div dangerouslySetInnerHTML={{ __html: rawIframeCode }}></div>
+        ) : (
+          <div></div>
+        )}
+      </div>
     </div>
   );
 };
